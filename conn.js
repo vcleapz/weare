@@ -19,7 +19,7 @@ con.on('error', function (err) {
         throw err;                                  // server variable configures this)
     }
 });
-}
+
 
 handleDisconnect();
 
