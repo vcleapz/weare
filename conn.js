@@ -9,16 +9,17 @@ var con = mysql.createConnection({
 
 con.connect(function (err) {
     if (err) throw err;
+
+    con.on('error', function (err) {
+        console.log('3. db error', err);
+        if (err.code === 'PROTOCOL_CONNECTION_LOST') { 	// Connection to the MySQL server is usually
+            handleDisconnect();                      	// lost due to either server restart, or a
+        } else {                                      	// connnection idle timeout (the wait_timeout
+            throw err;                                  // server variable configures this)
+        }
+    });
 });
 
-con.on('error', function (err) {
-    console.log('3. db error', err);
-    if (err.code === 'PROTOCOL_CONNECTION_LOST') { 	// Connection to the MySQL server is usually
-        handleDisconnect();                      	// lost due to either server restart, or a
-    } else {                                      	// connnection idle timeout (the wait_timeout
-        throw err;                                  // server variable configures this)
-    }
-});
 
 var port = process.env.PORT || 5000;
 app.listen(port, function () {
