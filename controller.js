@@ -13,7 +13,7 @@ exports.space = function (req, res) {
     });
 };
 const port = process.env.PORT || 8000;
-server.listen(port, () => {
+connection.listen(port, () => {
     console.log("App is running on port " + port);
 });
 
