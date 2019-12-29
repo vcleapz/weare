@@ -9,24 +9,9 @@ var con = mysql.createConnection({
 
 con.connect(function (err) {
     if (err) throw err;
+
+    handleDisconnect(con);
 });
 
-
-function handleDisconnect(conn) {
-    con.on('error', function (err) {
-        if (!err.fatal) {
-            return;
-        }
-
-        if (err.code !== 'PROTOCOL_CONNECTION_LOST') {
-            throw err;
-        }
-        console.log('Re-connecting lost connection: ' + err.stack);
-        MYSQL = con;
-        handleDisconnect(MYSQL);
-        MYSQL.connect();
-    });
-}
-handleDisconnect(MYSQL);
 
 module.exports = con;
