@@ -2,7 +2,7 @@
   "name": "cws",
   "version": "1.0.0",
   "description": "cws api for pcs",
-  "main": "worker.js",
+  "main": "server.js",
   "scripts": {
     "start": "node server.js",
     "test": "echo \"Error: no test specified\" && exit 1"
