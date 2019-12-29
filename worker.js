@@ -1,5 +1,4 @@
-console.log("Api Worker starting...");
-
-setInterval(() => {
-    console.log("Api Worker still running.");
-}, 1000);
+var http = require("http");
+setInterval(function () {
+    http.get("https://cws-api.herokuapp.com/space");
+}, 300000); // every 5 minutes (300000)
