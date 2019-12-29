@@ -11,7 +11,7 @@ var con = mysql.createPool({
     database: "heroku_d38d2ba38f5ba8e"
 });
 
-con.connect(function (err) {
+con.on('error', function (err) {
     if (err) throw err;
 });
 
