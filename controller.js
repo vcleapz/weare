@@ -12,10 +12,6 @@ exports.space = function (req, res) {
         }
     });
 };
-const port = process.env.PORT || 8000;
-connection.listen(port, () => {
-    console.log("App is running on port " + port);
-});
 
 exports.index = function (req, res) {
     response.ok("Hello from the Node JS RESTful side!", res)
