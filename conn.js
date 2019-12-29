@@ -9,6 +9,8 @@ var con = mysql.createConnection({
 
 con.connect(function (err) {
     if (err) throw err;
+    handleDisconnect(con);
+    con.connect();
 });
 
 module.exports = con;
