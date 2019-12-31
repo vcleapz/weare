@@ -4,7 +4,7 @@ var express = require('express'),
     bodyParser = require('body-parser'),
     controller = require('./controller');
 
-app.use(express.static('assets'));
+app.use(express.static('./assets'));
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 
