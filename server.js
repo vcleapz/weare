@@ -4,6 +4,10 @@ var express = require('express'),
     bodyParser = require('body-parser'),
     controller = require('./controller');
 
+
+var port = process.address().port
+console.log("Example app listening at http://%s:%s", host, port)
+
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 
