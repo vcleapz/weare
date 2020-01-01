@@ -14,7 +14,7 @@ exports.space = function (req, res) {
 };
 
 exports.index = function (req, res) {
-    response.ok("Hello from the Node JS RESTful side!", res)
+    response.ok("Hello from the CWS-API Node JS RESTful By:AryWic Dev!", res)
 };
 
 exports.findUsers = function (req, res) {
