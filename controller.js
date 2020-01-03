@@ -40,8 +40,8 @@ exports.createUsers = function (req, res) {
     var space_hours = req.body.space_hours;
     var space_photo = req.body.space_photo;
 
-    connection.query('INSERT INTO space (space_name, space_address, space_description, space_hours, space_photo) values (?,?,?,?,?)',
-        [space_name, space_address, space_description, space_hours, space_photo],
+    connection.query('INSERT INTO space (space_name, space_address, space_description, space_hours, space_photo, space_facilities,space_location) values (?,?,?,?,?,?,?)',
+        [space_name, space_address, space_description, space_hours, space_photo, space_facilities, space_location],
         function (error, rows, fields) {
             if (error) {
                 console.log(error)
@@ -60,8 +60,8 @@ exports.updateUsers = function (req, res) {
     var space_hours = req.body.space_hours;
     var space_photo = req.body.space_photo;
 
-    connection.query('UPDATE space SET space_name = ?, space_address = ?, space_description = ?,space_hours = ?,space_photo = ? where id = ?',
-        [space_name, space_address, space_description, space_hours, space_photo, space_id],
+    connection.query('UPDATE space SET space_name = ?, space_address = ?, space_description = ?,space_hours = ?,space_photo = ?,space_facilities = ?,space_location = ? where id = ?',
+        [space_name, space_address, space_description, space_hours, space_photo, space_id, space_facilities, space_location],
         function (error, rows, fields) {
             if (error) {
                 console.log(error)
