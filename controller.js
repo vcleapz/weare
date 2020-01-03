@@ -65,7 +65,7 @@ exports.updateUsers = function (req, res) {
     var space_location = req.body.space_location;
 
     connection.query('UPDATE space SET space_name = ?, space_address = ?, space_description = ?,space_hours = ?,space_photo = ?,space_facilities = ?,space_location = ? where id = ?',
-        [space_name, space_address, space_description, space_hours, space_photo, space_id, space_facilities, space_location],
+        [space_name, space_address, space_description, space_hours, space_photo, space_facilities, space_location, space_id],
         function (error, rows, fields) {
             if (error) {
                 console.log(error)
