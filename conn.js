@@ -9,6 +9,10 @@ var con = mysql.createPool({
     user: "b74e0ac591e038",
     password: "8b24d10f",
     database: "heroku_d38d2ba38f5ba8e"
+    // host: "localhost",
+    // user: "root",
+    // password: "",
+    // database: "coworkingspace"
 });
 
 con.on('error', function (err) {
