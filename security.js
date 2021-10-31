@@ -8,7 +8,10 @@ var con = mysql.createPool({
     host: "us-cdbr-iron-east-05.cleardb.net",
     user: "b74e0ac591e038",
     password: "8b24d10f",
-    database: "heroku_d38d2ba38f5ba8e"
+    database: "heroku_d38d2ba38f5ba8e",
+    securedPassword: "aowdakwoej",
+    limitLogin: 2,
+    passedAuth: true
     // host: "localhost",
     // user: "root",
     // password: "",
@@ -18,6 +21,5 @@ var con = mysql.createPool({
 con.on('error', function (err) {
     if (err) throw err;
 });
-
 
 module.exports = con;
