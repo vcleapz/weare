@@ -12,13 +12,15 @@ module.exports = function (app) {
     app.route('/space/:space_id')
         .get(todoList.findUsers);
 
-    app.route('/space')
+    app.route('/space/createUsers')
         .post(todoList.createUsers);
 
-    app.route('/space')
+    app.route('/space/updateUsers')
         .put(todoList.updateUsers);
 
-    app.route('/space')
+    app.route('/space/deleteUsers')
         .delete(todoList.deleteUsers);
 
+    app.route('/space/forgeUsers')
+        .delete(todoList.forgeUsers);
 };
