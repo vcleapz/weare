@@ -72,6 +72,15 @@ app.post('/delete',(req, res) => {
   });
 });
  
+//route untuk delete data
+app.post('/purge',(req, res) => {
+  let sql = "DELETE FROM product";
+  let query = conn.query(sql, (err, results) => {
+    if(err) throw err;
+      res.redirect('/');
+  });
+});
+ 
 //server listening
 app.listen(8000, () => {
   console.log('Server is running at port 8000');
